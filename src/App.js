@@ -1,15 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import { Home } from './components/Home';
+import { GruasViajeras } from './components/Gruas-Viajeras';
+import { Contacto } from './components/Contacto';
+import { Inicio } from './components/Inicio';
 import { IoLocationSharp, IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
 import { MdAttachEmail } from 'react-icons/md';
 
 import {  Route, Routes, Link, BrowserRouter } from "react-router-dom";
 
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -25,26 +24,26 @@ function App() {
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/">Home</Nav.Link>
-                <Nav.Link as={Link} to="/Contact"> Contact </Nav.Link>
-                <Nav.Link as={Link} to="/About">About</Nav.Link>
+                <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+                <Nav.Link as={Link} to="/Contacto"> Contacto </Nav.Link>
+                <Nav.Link as={Link} to="/Gruas-Viajeras">Grúas Viajeras</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
         <div>
           <Routes>
-            <Route path="/About" element={<About/>}/>
-            <Route path="/Contact" element={<Contact/>}/>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/Gruas-Viajeras" element={<GruasViajeras/>}/>
+            <Route path="/Contacto" element={<Contacto/>}/>
+            <Route path="/" element={<Inicio/>}/>
           </Routes>
         </div>
         <div class="text-bg-dark p-3 mt-3">
         <div class="row">
           <div class="col align-self-center">
-            <p class="fs-6">ALFIL ALFA TEAM</p>
-            <p class="fs-6">Paras 850 apt 1409, Col. Centro, CP 64000, Monterrey, N.L.</p>
-            <p class="fs-6">Contacto: alfilalfateam@gmail.com</p>
+            <p class="mt-3">EXACO GRÚAS VIAJERAS<br />
+            Paras 850 apt 1409, Col. Centro, CP 64000, Monterrey, N.L.<br />
+            Contacto: alfilalfateam@gmail.com</p>
           </div>
           <div class="col align-self-center">
             <div class="row">
@@ -62,7 +61,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div class="col align-self-center">col-sm</div>
+          <div class="col align-self-center text-end">col-sm</div>
         </div>
         </div>
       </div>
