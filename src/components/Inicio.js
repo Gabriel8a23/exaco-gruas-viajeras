@@ -1,4 +1,5 @@
 import React from 'react';
+import { Slider } from './slider-components/Slider';
 import { Helmet } from 'react-helmet-async';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -15,9 +16,7 @@ export const Inicio = () => {
         <meta name="description" content="Soluciones en grúas viajeras: Grúa Pórtico, Monopuente, Bipuente, Grúa Radial. Servicio de calidad en toda la república mexicana. Cotización sin compromiso." />
         <link rel="canonical" href="/"/>
       </Helmet>
-      <Card>
-        <Card.Img variant="top" src="https://gruasviajerasem.com/wp-content/uploads/2020/01/Gr%C3%BAas-viajeras-portada-2-NUEVA-1.jpg" />
-      </Card>
+      <Slider />
       <div class="text-bg-primary text-center p-2"><h1>Servicios para Grúas Viajeras y Polipastos</h1></div>
       <Container>
         <div class="row mb-3 mt-3">
