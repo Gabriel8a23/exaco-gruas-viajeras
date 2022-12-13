@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import emailjs from '@emailjs/browser';
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async';
 
 export const Contacto = () => {
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env
@@ -24,9 +24,9 @@ export const Contacto = () => {
       <Helmet>
         <title>Exaco Grúas Viajeras | Contacto</title>
         <meta name="description" content="Soluciones en grúas viajeras: Grúa Pórtico, Monopuente, Bipuente, Grúa Radial. Servicio de calidad en toda la república mexicana. Cotización sin compromiso." />
-        <link rel="canonical" href="/Contacto"/>
+        <link rel="canonical" href="/contacto"/>
       </Helmet>
-      <div class="text-bg-warning text-center mt-3"><h1>Solicita tu Cotización</h1></div>
+      <div class="text-bg-primary text-center mt-3"><h1>Solicita tu Cotización</h1></div>
       <Container>
         <Form ref={formRef} onSubmit={onSubmit}>
           <div class="row align-items-stretch mb-3 mt-3">
@@ -56,12 +56,19 @@ export const Contacto = () => {
           </div>
           <div class="row align-items-stretch mb-3 mt-3">
             <div class="col-md-6">
-              <Button variant="primary" type="submit">
-                Enviar
-              </Button>
+              <div className="d-grid gap-2">
+                <Button variant="secondary" type="submit">
+                  <div class="text-whiet">Enviar</div>
+                </Button>
+              </div>
             </div>
           </div>
         </Form>
+      </Container>
+      <Container>
+        <p className="text-center">
+          <a class="text-info" href="/aviso-de-privacidad">Aviso de Privacidad</a>
+        </p>
       </Container>
     </div>
   )

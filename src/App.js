@@ -1,40 +1,42 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import { AvisoDePrivacidad } from './components/Aviso-De-Privacidad';
 import { GruasViajeras } from './components/Gruas-Viajeras';
 import { Contacto } from './components/Contacto';
 import { Inicio } from './components/Inicio';
-import { IoLocationSharp, IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
-import { MdAttachEmail } from 'react-icons/md';
+import { IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
 
 import {  Route, Routes, Link, BrowserRouter } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './custom-style.scss';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div class="text-end text-bg-secondary p-1">
-          <Container fluid> <IoLogoWhatsapp /> 818 366 8574 <MdAttachEmail /> alfilalfateam@gmail.com <IoLocationSharp /> Monterrey, N.L., México</Container>
-        </div>
-        <Navbar bg="warning" variant="light" expand="lg">
+        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
           <Container>
-            <Navbar.Brand variant="dark" as={Link} to="/">Alfil Alfa Team</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
+            <Navbar.Brand variant="dark" as={Link} to="/">EXACO</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/">Inicio</Nav.Link>
-                <Nav.Link as={Link} to="/Contacto"> Contacto </Nav.Link>
-                <Nav.Link as={Link} to="/Gruas-Viajeras">Grúas Viajeras</Nav.Link>
+                <Nav.Link as={Link} to="/"><div class="text-secondary">Inicio</div></Nav.Link>
+                <Nav.Link as={Link} to="/gruas-viajeras"><div class="text-secondary">Grúas Viajeras</div></Nav.Link>
+                <Nav.Link as={Link} to="/contacto"><div class="text-secondary">Contacto</div></Nav.Link>
+              </Nav>
+              <Nav>
+                <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
         <div>
           <Routes>
-            <Route path="/Gruas-Viajeras" element={<GruasViajeras/>}/>
-            <Route path="/Contacto" element={<Contacto/>}/>
+            <Route path="/aviso-de-privacidad" element={<AvisoDePrivacidad/>}/>
+            <Route path="/gruas-viajeras" element={<GruasViajeras/>}/>
+            <Route path="/contacto" element={<Contacto/>}/>
             <Route path="/" element={<Inicio/>}/>
           </Routes>
         </div>
