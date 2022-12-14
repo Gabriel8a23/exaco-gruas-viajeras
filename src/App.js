@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { AvisoDePrivacidad } from './components/Aviso-De-Privacidad';
 import { GruasViajeras } from './components/Gruas-Viajeras';
+import { Polipastos } from './components/Polipastos';
 import { Contacto } from './components/Contacto';
 import { Inicio } from './components/Inicio';
 import { IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
@@ -16,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky="top">
           <Container>
             <Navbar.Brand variant="dark" as={Link} to="/">EXACO</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -24,6 +25,7 @@ function App() {
               <Nav className="me-auto">
                 <Nav.Link as={Link} to="/"><div class="text-secondary">Inicio</div></Nav.Link>
                 <Nav.Link as={Link} to="/gruas-viajeras"><div class="text-secondary">Grúas Viajeras</div></Nav.Link>
+                <Nav.Link as={Link} to="/polipastos"><div class="text-secondary">Polipastos</div></Nav.Link>
                 <Nav.Link as={Link} to="/contacto"><div class="text-secondary">Contacto</div></Nav.Link>
               </Nav>
               <Nav>
@@ -35,6 +37,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/aviso-de-privacidad" element={<AvisoDePrivacidad/>}/>
+            <Route path="/polipastos" element={<Polipastos/>}/>
             <Route path="/gruas-viajeras" element={<GruasViajeras/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
             <Route path="/" element={<Inicio/>}/>

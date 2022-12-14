@@ -43,47 +43,54 @@ export const Inicio = () => {
       <div class="text-bg-primary text-center p-2 mb-3"><h2>Cotiza nuestros servicios.</h2></div>
       <Container class="mt-3 mb-4">
         <CardGroup>
-          <div class="row">
-            <div class="col">
-              <Card>
-                <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
-                <Card.Body class="text-bg-info text-center">
-                  <div class="mt-3 mb-3">
-                    <Card.Title>Grúa Pórtico</Card.Title>
-                  </div>
-                  <div class="mb-3">
-                    <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-            <div class="col">
-              <Card>
-                <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
-                <Card.Body class="text-bg-info text-center">
-                  <div class="mt-3 mb-3">
-                    <Card.Title>Grúa Monopuente</Card.Title>
-                  </div>
-                  <div class="mb-3">
-                    <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-            <div class="col">
-              <Card>
-                <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
-                <Card.Body class="text-bg-info text-center">
-                  <div class="mt-3 mb-3">
-                    <Card.Title>Grúa Radial</Card.Title>
-                  </div>
-                  <div class="mb-3">
-                    <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
+          <Card>
+            <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
+            <Card.Body class="text-bg-info text-center">
+              <div class="mt-3 mb-3">
+                <Card.Title>Grúa Pórtico</Card.Title>
+              </div>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in
+                to additional content. This card has even longer content than the
+                first to show that equal height action.
+              </Card.Text>
+              <div class="mb-3">
+                <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
+            <Card.Body class="text-bg-info text-center">
+              <div class="mt-3 mb-3">
+                <Card.Title>Grúa Pórtico</Card.Title>
+              </div>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in
+                to additional content. This card has even longer content than the
+                first to show that equal height action.
+              </Card.Text>
+              <div class="mb-3">
+                <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="https://www.konecranes.com/sites/default/files/styles/5_7_small/public/2018-09/medium_konecranes_waste_to_energy_beinheim_france_scaldis_2012_008.jpg?itok=qmrB0Xho" />
+            <Card.Body class="text-bg-info text-center">
+              <div class="mt-3 mb-3">
+                <Card.Title>Grúa Pórtico</Card.Title>
+              </div>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in
+                to additional content. This card has even longer content than the
+                first to show that equal height action.
+              </Card.Text>
+              <div class="mb-3">
+                <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
+              </div>
+            </Card.Body>
+          </Card>
         </CardGroup>
       </Container>
     </div>
