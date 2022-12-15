@@ -8,28 +8,40 @@ import { Polipastos } from './components/Polipastos';
 import { Contacto } from './components/Contacto';
 import { Inicio } from './components/Inicio';
 import { IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
-
-import {  Route, Routes, Link, BrowserRouter } from "react-router-dom";
+import { useState } from 'react';
+import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
 
 import './custom-style.scss';
 
 function App() {
+  const [show, setShow] = useState(false)
+
+  function toggleShow() {
+    setShow(show => !show)
+    console.log(navShow)
+    document.getElementById('responsive-navbar-nav').className = navShow
+  }
+
+  let navShow = show ? 'navbar-collapse collapse' : 'navbar-collapse collapse show'
+
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky="top">
           <Container>
             <Navbar.Brand variant="dark" as={Link} to="/">EXACO</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <button onClick={toggleShow} class="navbar-toggler">
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/"><div class="text-secondary">Inicio</div></Nav.Link>
-                <Nav.Link as={Link} to="/gruas-viajeras"><div class="text-secondary">Grúas Viajeras</div></Nav.Link>
-                <Nav.Link as={Link} to="/polipastos"><div class="text-secondary">Polipastos</div></Nav.Link>
-                <Nav.Link as={Link} to="/contacto"><div class="text-secondary">Contacto</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/"><div class="text-secondary">Inicio</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/gruas-viajeras"><div class="text-secondary">Grúas Viajeras</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/polipastos"><div class="text-secondary">Polipastos</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/contacto"><div class="text-secondary">Contacto</div></Nav.Link>
               </Nav>
               <Nav>
-                <Button variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
+                <Button onClick={toggleShow} variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
