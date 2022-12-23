@@ -7,7 +7,8 @@ import { GruasViajeras } from './components/Gruas-Viajeras';
 import { Polipastos } from './components/Polipastos';
 import { Contacto } from './components/Contacto';
 import { Inicio } from './components/Inicio';
-import { IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
+import { IoLogoWhatsapp, IoLogoFacebook, IoLogoInstagram, IoLogoTwitter, IoLocationSharp } from 'react-icons/io5';
+import { MdAttachEmail } from 'react-icons/md';
 import { useState } from 'react';
 import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
 
@@ -15,30 +16,33 @@ import './custom-style.scss';
 
 function App() {
   const [show, setShow] = useState(false)
+  let navShow = show ? 'navbar-collapse collapse' : 'navbar-collapse collapse show'
 
   function toggleShow() {
     setShow(show => !show)
-    console.log(navShow)
     document.getElementById('responsive-navbar-nav').className = navShow
   }
-
-  let navShow = show ? 'navbar-collapse collapse' : 'navbar-collapse collapse show'
 
   return (
     <BrowserRouter>
       <div className="App">
+        <div className="text-bg-info p-1 hide-sm">
+          <Container fluid>
+            <IoLogoWhatsapp /> 888 888 8888 | <MdAttachEmail /> ventas@exaco.com | <IoLocationSharp /> Monterrey, N.L., México
+          </Container>
+        </div>
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky="top">
           <Container>
             <Navbar.Brand variant="dark" as={Link} to="/">EXACO</Navbar.Brand>
-            <button onClick={toggleShow} class="navbar-toggler">
-              <span class="navbar-toggler-icon"></span>
+            <button onClick={toggleShow} className="navbar-toggler">
+              <span className="navbar-toggler-icon"></span>
             </button>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link onClick={toggleShow} as={Link} to="/"><div class="text-secondary">Inicio</div></Nav.Link>
-                <Nav.Link onClick={toggleShow} as={Link} to="/gruas-viajeras"><div class="text-secondary">Grúas Viajeras</div></Nav.Link>
-                <Nav.Link onClick={toggleShow} as={Link} to="/polipastos"><div class="text-secondary">Polipastos</div></Nav.Link>
-                <Nav.Link onClick={toggleShow} as={Link} to="/contacto"><div class="text-secondary">Contacto</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/"><div className="text-secondary">Inicio</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/gruas-viajeras"><div className="text-secondary">Grúas Viajeras</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/polipastos"><div className="text-secondary">Polipastos</div></Nav.Link>
+                <Nav.Link onClick={toggleShow} as={Link} to="/contacto"><div className="text-secondary">Contacto</div></Nav.Link>
               </Nav>
               <Nav>
                 <Button onClick={toggleShow} variant="secondary" as={Link} to="/contacto">Cotiza ahora!</Button>
@@ -55,31 +59,43 @@ function App() {
             <Route path="/" element={<Inicio/>}/>
           </Routes>
         </div>
-        <div class="text-bg-dark p-3 mt-3">
-        <div class="row">
-          <div class="col align-self-center">
-            <p class="mt-3">EXACO GRÚAS VIAJERAS<br />
-            Paras 850 apt 1409, Col. Centro, CP 64000, Monterrey, N.L.<br />
-            Contacto: alfilalfateam@gmail.com</p>
-          </div>
-          <div class="col align-self-center">
-            <div class="row">
-              <div class="col-sm align-self-center">
-                <IoLogoFacebook />
-              </div>
-              <div class="col-sm align-self-center">
-                <IoLogoWhatsapp />
-              </div>
-              <div class="col-sm align-self-center">
-                <IoLogoInstagram />
-              </div>
-              <div class="col-sm align-self-center">
-                <IoLogoTwitter />
+        <div className="text-bg-dark p-3 mt-3">
+          <div className="row">
+            <div className="col-sm">
+              <p>EXACO GRÚAS VIAJERAS<br />
+              Tel: 888 888 8888<br />
+              Correo: ventas@exaco.com<br />
+              Dirección: Col. Centro, CP 64000, Monterrey, N.L.
+              </p>
+            </div>
+            <div className="col-sm">
+              <div className="row text-center">
+                <div className="col">
+                  <IoLogoFacebook className="footer-icons" />
+                </div>
+                <div className="col">
+                  <IoLogoWhatsapp className="footer-icons" />
+                </div>
+                <div className="col">
+                  <IoLocationSharp className="footer-icons" />
+                </div>
+                <div className="col">
+                  <IoLogoInstagram className="footer-icons" />
+                </div>
+                <div className="col">
+                  <IoLogoTwitter className="footer-icons" />
+                </div>
               </div>
             </div>
+            <div className="col-sm text-end hide-sm">
+              NAVEGACIÓN<br />
+              <a className="text-light" href="/">Inicio</a><br />
+              <a className="text-light" href="/gruas-viajeras">Grúas Viajeras</a><br />
+              <a className="text-light" href="/polipastos">Polipastos</a><br />
+              <a className="text-light" href="/contacto">Contacto</a><br />
+              <a className="text-light" href="/aviso-de-privacidad">Aviso de privacidad</a>
+            </div>
           </div>
-          <div class="col align-self-center text-end">col-sm</div>
-        </div>
         </div>
       </div>
     </BrowserRouter>
