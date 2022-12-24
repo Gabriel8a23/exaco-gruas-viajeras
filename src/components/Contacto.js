@@ -65,7 +65,7 @@ export const Contacto = () => {
           <div className="row align-items-stretch mb-3 mt-3">
             <div className="col-md-6">
               <div classNameName="d-grid gap-2">
-                <Button variant="secondary" size="lg" type="submit">
+                <Button variant="secondary" type="submit">
                   <div className="text-whiet mb-1">Enviar</div>
                 </Button>
               </div>
